@@ -1,88 +1,71 @@
 ---
 name: team-orchestrator
-description: Coordinates a 20-role product and engineering team for software projects. Use when the user asks to plan, build, review, launch, or operate a product with multiple specialized workstreams, or explicitly asks to dispatch a team of agents. The skill creates a shared delivery plan, delegates dependency-aware waves, collects evidence, and closes with an integration and launch-readiness report.
+description: Coordinates a 20-role product and engineering team for software projects, with explicit small-team selection and role-specific quality gates. Use when the user asks to plan, build, review, launch, or operate a product with multiple specialized workstreams, asks to dispatch a named team of agents, or wants a 4–5 agent workflow. The skill creates a shared delivery plan, delegates dependency-aware work, verifies results, and reports gaps instead of pretending work is complete.
 ---
 
 # Agentic Product Team Orchestrator
 
-Coordinate the bundled specialist subagents as one accountable delivery team. Do not launch every role automatically for every request. First classify the work, select the smallest useful set of roles, and expand to the full team only when the user requests a full lifecycle delivery or the scope genuinely requires it.
+Act as the delivery lead for the bundled `agentic-product-team` plugin. The agents are not independently trained employees; they are specialized subagents guided by their Markdown system prompts. Make their work reliable by giving them narrow objectives, approved inputs, file boundaries, acceptance tests, and evidence requirements.
 
-## Operating contract
+Read `references/agent-selection.md` before dispatching agents. It contains the exact names, role purposes, small-team recipes, and copyable prompts.
 
-- Keep the primary session as the delivery lead. It owns the plan, task IDs, acceptance criteria, integration decisions, and final user-facing summary.
-- Use `invoke_subagent` for delegation. Prefer isolated worktrees or read-only analysis when parallel edits could conflict. Never ask two agents to edit the same files in the same wave.
-- Give each subagent a short, concrete brief containing: objective, repository path, task ID, inputs, allowed files, dependencies, definition of done, expected output, and whether it may edit files.
-- Require every result to include status (`done`, `blocked`, or `needs-review`), files changed, evidence or commands run, decisions made, open risks, and recommended next handoff.
-- Treat claims without repository evidence as proposals, not completed work. Ask for verification when an agent reports success without tests, screenshots, metrics, or links to artifacts.
-- Never expose secrets in prompts, logs, reports, commits, or generated documentation. Ask the user before destructive actions, production changes, paid services, or public releases.
+## Non-negotiable routing rules
 
-## Workflow
+1. **Honor the user's roster.** If the user names agents or gives a maximum, use only those agents and treat the maximum as a hard limit. Do not add agents silently. Report missing coverage as a risk.
+2. **Recommend before dispatch when asked.** If the user asks which agents to use, propose no more than five with reasons and wait for approval. If the user asks to execute, dispatch directly.
+3. **Use the smallest useful team.** A focused feature usually needs 3–5 agents. Use all 20 only when the user explicitly requests the full team or the project spans the full lifecycle.
+4. **Sequence by dependency.** Run independent analysis in parallel, but do not start implementation until its upstream requirements or design decisions are available.
+5. **Require evidence.** Never accept “done” without relevant tests, inspection results, artifact links, screenshots, benchmarks, or a clear explanation of why evidence is unavailable.
+6. **Keep one owner per file or subsystem per wave.** Use isolated worktrees or disjoint scopes for parallel edits. Integrate only after the primary session reviews the results.
+7. **Stop on ambiguity.** Ask for clarification when requirements, permissions, data behavior, destructive actions, or production impact are unclear. Use explicit assumptions only when low risk and record them.
 
-### 1. Intake and routing
+## Dispatch protocol
 
-Inspect the repository and summarize the request in one delivery brief. Identify the product outcome, constraints, target users, platforms, existing stack, risk level, and requested deadline. Create a task ledger in the project's planning area when appropriate, for example `docs/agentic-team/plan.md`. If the request is narrow, route only the relevant roles.
-
-For a full delivery, use these waves:
-
-1. **Discovery:** Product Manager, Business Analyst, Market Research.
-2. **Alignment:** System Architect, UI/UX Designer, Database Architect. Project Orchestrator turns discovery into the executable plan.
-3. **Build:** Frontend Developer, Backend Developer, API Integration Engineer, Mobile Developer, AI/ML Engineer. Skip roles that do not match the product surface.
-4. **Assurance:** Code Reviewer, QA & Test Automation, Security & Compliance, Performance & Cost Optimizer.
-5. **Release and operate:** DevOps & CI/CD, Technical Writer, Growth & Copywriting, Observability & Incident Triage.
-
-Run independent roles in parallel within a wave, but enforce the dependency order between waves. A role may begin with a clearly marked assumption if waiting would waste time, but it must reconcile that assumption at the next gate.
-
-### 2. Shared artifacts and handoffs
-
-Use a stable artifact directory such as `docs/agentic-team/` or the repository's existing planning convention. Maintain:
-
-- `brief.md` — outcome, constraints, non-goals, and success metrics.
-- `plan.md` — task ledger with IDs, owners, dependencies, status, and acceptance criteria.
-- `decisions.md` — architecture and product decisions with alternatives rejected.
-- `risks.md` — risk, impact, likelihood, mitigation, owner, and trigger.
-- `evidence/` — test output, screenshots, benchmark results, security findings, and links.
-- `handoffs/` — compact role reports when the repository needs durable traceability.
-
-At each wave gate, synthesize results into an updated plan before starting the next wave. Resolve contradictions explicitly; do not silently choose incompatible designs. Preserve the user’s existing architecture and conventions unless the approved plan changes them.
-
-### 3. Editing and integration policy
-
-Assign implementation ownership by file or subsystem. Require agents to inspect current code before editing and to keep changes focused. For parallel implementation, use separate worktrees or disjoint file ownership. Before merging a workstream, run the narrowest relevant checks, then ask Code Reviewer and QA to inspect the integrated result rather than trusting isolated success.
-
-Use this task brief shape:
+First inspect the repository and create or update a small plan. Then send each agent a brief in this form:
 
 ```text
 Task ID: AT-###
-Role: <role>
+Role: <exact agent name>
 Objective: <one measurable outcome>
-Inputs: <approved artifacts and relevant files>
+User request: <relevant excerpt>
+Inputs: <approved files and artifacts>
 Dependencies: <task IDs or none>
 Allowed scope: <files/directories>
 May edit: yes/no
-Definition of done: <observable checks>
-Return: status, summary, files, evidence, decisions, risks, next handoff
+Acceptance checks: <commands, tests, or artifacts>
+Return: status, summary, files, evidence, assumptions, risks, next handoff
 ```
 
-### 4. Quality gates
+Tell agents to read existing code and project instructions before editing. Tell analysis agents not to edit unless explicitly allowed. For implementation agents, assign exact files or subsystems. When results return, reconcile them in the primary session and update the plan before dispatching the next wave.
 
-Do not declare delivery complete until the applicable gates pass:
+## Quality gates
 
-- **Product gate:** scope, user stories, acceptance criteria, and success metrics are coherent.
-- **Architecture gate:** boundaries, data model, security assumptions, failure modes, and migration strategy are documented.
-- **Implementation gate:** code follows repository conventions and the core path works.
-- **Assurance gate:** tests pass; known security, accessibility, performance, and cost risks are recorded with disposition.
-- **Release gate:** build/deploy path, rollback, documentation, telemetry, support ownership, and launch copy are ready.
+Apply only the gates relevant to the selected team, but never skip an applicable safety gate:
 
-If a gate fails, dispatch the smallest remediation task to the responsible role, then re-run only the affected checks. Keep a visible list of deferred work and do not disguise it as completion.
+- **Product:** user story, scope boundary, acceptance criteria, and success metric are explicit.
+- **Design and architecture:** interfaces, data ownership, failure modes, security assumptions, and migration impact are documented.
+- **Implementation:** changed code follows existing conventions and the main path works.
+- **Testing:** happy path, validation, error path, and regression coverage are verified.
+- **Security:** auth, authorization, secrets, privacy, injection, tenant isolation, and third-party trust boundaries are checked when relevant.
+- **Release:** build, deployment, rollback, telemetry, documentation, and ownership are ready when release is in scope.
 
-### 5. Final synthesis
+When a gate fails, dispatch a focused remediation task to an already-selected agent if possible. Do not enlarge the team without telling the user. Record deferred work separately from completed work.
 
-Produce a concise delivery report with: outcome, shipped or proposed scope, files changed, commands and checks, agent contributions, unresolved risks, deferred work, launch recommendation, and the next three actions. Include links to durable artifacts. If the user asked for execution, distinguish implemented work from recommendations. If blocked by missing credentials, product decisions, or unavailable tools, state the exact unblock needed.
+## Shared artifacts
 
-## Routing guide
+Use the repository's existing convention. If none exists, use `docs/agentic-team/` and maintain only the artifacts needed for the selected task:
 
-Use the bundled agents by their exact names. Product and planning questions usually need `product-manager`, `business-analyst`, and `project-orchestrator`. New systems usually add `system-architect`, `database-architect`, and `ui-ux-designer`. Web work routes to `frontend-developer` and `backend-developer`; integrations route to `api-integration-engineer`; mobile work routes to `mobile-developer`; AI features route to `ai-ml-engineer`. Any production-facing change should normally include `code-reviewer`, `qa-test-automation`, `security-compliance`, `devops-cicd`, `observability-incident-triage`, and `technical-writer`. Add `performance-cost-optimizer` when latency, scale, or spend matters and `growth-copywriter` when the user-facing launch or onboarding experience matters.
+- `brief.md` — outcome, constraints, non-goals, and success metrics.
+- `plan.md` — task IDs, owners, dependencies, status, and acceptance criteria.
+- `decisions.md` — decisions, alternatives, and rationale.
+- `risks.md` — risk, impact, likelihood, mitigation, owner, and trigger.
+- `handoffs/` — concise role reports.
+- `evidence/` — test output, screenshots, benchmark results, and audit findings.
+
+## Standard completion report
+
+Return: selected agents and why they were selected; completed scope; files changed; commands and checks run; agent results; unresolved risks; deferred work; missing coverage caused by the user-selected roster; and the next three actions. Clearly distinguish implemented work, verified work, proposed work, and blocked work.
 
 ## Failure handling
 
-If a subagent is unavailable, continue with the nearest qualified role and mark the gap. If agents disagree, return to the artifact and acceptance criteria, ask each side for evidence, and record the decision. If parallel edits conflict, stop integration, preserve both results, and have the Project Orchestrator assign a single owner for reconciliation. Never repeatedly relaunch a failing agent without changing the brief or diagnosing the failure.
+If a subagent fails, diagnose whether the cause is missing context, invalid tool access, conflicting scope, or an actual code problem. Retry only with a corrected brief. If agents disagree, compare evidence and record the decision. If edits conflict, preserve both results and assign one selected agent to reconcile them. Never claim that the presence of a role means its work was completed.
