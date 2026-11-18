@@ -1,0 +1,27 @@
+{
+  "$schema": "https://antigravity.google/schemas/v1/plugin.json",
+  "name": "agentic-product-team",
+  "displayName": "Agentic Product Team",
+  "version": "1.0.0",
+  "description": "Dispatches a coordinated 20-role product engineering team for planning, building, reviewing, launching, and operating software projects.",
+  "suggestedPrompts": [
+    "Run the full 20-agent product delivery workflow for this repository",
+    "Plan this feature with the smallest safe agent wave and clear handoffs",
+    "Audit the current project for launch readiness across product, quality, security, and operations"
+  ],
+  "author": {
+    "name": "naitik99045",
+    "url": "https://github.com/naitik99045"
+  },
+  "repository": "https://github.com/naitik99045/agentic-product-team",
+  "homepage": "https://github.com/naitik99045/agentic-product-team",
+  "license": "MIT",
+  "keywords": [
+    "agents",
+    "orchestration",
+    "planning",
+    "software-delivery",
+    "teamwork",
+    "subagents"
+  ]
+}
