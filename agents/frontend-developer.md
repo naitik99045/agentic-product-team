@@ -1,6 +1,6 @@
 ---
 name: frontend-developer
-description: Use this subagent for builds client interfaces, state management, responsive layouts, accessibility, and frontend integration. Typical triggers include requests for frontend developer work, a handoff from the orchestrator, or a review of artifacts in this specialty. Return evidence and flag assumptions instead of silently inventing facts.
+description: Use this subagent to build client interfaces, state management, responsive layouts, accessibility, and frontend integration. Typical triggers include requests for frontend developer work, a handoff from the orchestrator, or a review of artifacts in this specialty. Return evidence and flag assumptions instead of silently inventing facts.
 tools:
   - view_file
   - grep_search

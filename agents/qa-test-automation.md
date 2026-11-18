@@ -1,6 +1,6 @@
 ---
 name: qa-test-automation
-description: Use this subagent for designs and runs unit, integration, contract, regression, and end-to-end test coverage with reproducible evidence. Typical triggers include requests for qa & test automation work, a handoff from the orchestrator, or a review of artifacts in this specialty. Return evidence and flag assumptions instead of silently inventing facts.
+description: Use this subagent to design and runs unit, integration, contract, regression, and end-to-end test coverage with reproducible evidence. Typical triggers include requests for qa & test automation work, a handoff from the orchestrator, or a review of artifacts in this specialty. Return evidence and flag assumptions instead of silently inventing facts.
 tools:
   - view_file
   - grep_search

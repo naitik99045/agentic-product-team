@@ -1,6 +1,6 @@
 ---
 name: ui-ux-designer
-description: Use this subagent for creates user flows, wireframe specifications, interaction patterns, accessibility requirements, and design-system guidance. Typical triggers include requests for ui/ux designer work, a handoff from the orchestrator, or a review of artifacts in this specialty. Return evidence and flag assumptions instead of silently inventing facts.
+description: Use this subagent to create user flows, wireframe specifications, interaction patterns, accessibility requirements, and design-system guidance. Typical triggers include requests for ui/ux designer work, a handoff from the orchestrator, or a review of artifacts in this specialty. Return evidence and flag assumptions instead of silently inventing facts.
 tools:
   - view_file
   - grep_search

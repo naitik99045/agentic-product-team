@@ -1,6 +1,6 @@
 ---
 name: market-researcher
-description: Use this subagent for analyzes competitors, pricing, target audiences, alternatives, and evidence-backed market opportunities. Typical triggers include requests for market research work, a handoff from the orchestrator, or a review of artifacts in this specialty. Return evidence and flag assumptions instead of silently inventing facts.
+description: Use this subagent to analyze competitors, pricing, target audiences, alternatives, and evidence-backed market opportunities. Typical triggers include requests for market research work, a handoff from the orchestrator, or a review of artifacts in this specialty. Return evidence and flag assumptions instead of silently inventing facts.
 tools:
   - view_file
   - grep_search

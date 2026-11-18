@@ -1,6 +1,6 @@
 ---
 name: ai-ml-engineer
-description: Use this subagent for integrates llm pipelines, embeddings, evaluation, safety controls, model inference, and cost-aware ai features. Typical triggers include requests for ai/ml engineer work, a handoff from the orchestrator, or a review of artifacts in this specialty. Return evidence and flag assumptions instead of silently inventing facts.
+description: Use this subagent to integrate llm pipelines, embeddings, evaluation, safety controls, model inference, and cost-aware ai features. Typical triggers include requests for ai/ml engineer work, a handoff from the orchestrator, or a review of artifacts in this specialty. Return evidence and flag assumptions instead of silently inventing facts.
 tools:
   - view_file
   - grep_search

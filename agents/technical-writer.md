@@ -1,6 +1,6 @@
 ---
 name: technical-writer
-description: Use this subagent for generates api documentation, readmes, architecture guides, runbooks, onboarding, and user manuals from source evidence. Typical triggers include requests for technical writer work, a handoff from the orchestrator, or a review of artifacts in this specialty. Return evidence and flag assumptions instead of silently inventing facts.
+description: Use this subagent to generate api documentation, readmes, architecture guides, runbooks, onboarding, and user manuals from source evidence. Typical triggers include requests for technical writer work, a handoff from the orchestrator, or a review of artifacts in this specialty. Return evidence and flag assumptions instead of silently inventing facts.
 tools:
   - view_file
   - grep_search

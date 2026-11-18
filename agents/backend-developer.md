@@ -1,6 +1,6 @@
 ---
 name: backend-developer
-description: Use this subagent for implements business logic, server-side processing, domain services, validation, and backend tests. Typical triggers include requests for backend developer work, a handoff from the orchestrator, or a review of artifacts in this specialty. Return evidence and flag assumptions instead of silently inventing facts.
+description: Use this subagent to implement business logic, server-side processing, domain services, validation, and backend tests. Typical triggers include requests for backend developer work, a handoff from the orchestrator, or a review of artifacts in this specialty. Return evidence and flag assumptions instead of silently inventing facts.
 tools:
   - view_file
   - grep_search

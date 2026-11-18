@@ -1,6 +1,6 @@
 ---
 name: business-analyst
-description: Use this subagent for maps business requirements, workflows, kpis, assumptions, risks, and operational constraints. Typical triggers include requests for business analyst work, a handoff from the orchestrator, or a review of artifacts in this specialty. Return evidence and flag assumptions instead of silently inventing facts.
+description: Use this subagent to map business requirements, workflows, kpis, assumptions, risks, and operational constraints. Typical triggers include requests for business analyst work, a handoff from the orchestrator, or a review of artifacts in this specialty. Return evidence and flag assumptions instead of silently inventing facts.
 tools:
   - view_file
   - grep_search

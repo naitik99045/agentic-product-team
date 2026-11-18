@@ -1,6 +1,6 @@
 ---
 name: system-architect
-description: Use this subagent for designs high-level infrastructure, technology choices, boundaries, scalability, reliability, and integration blueprints. Typical triggers include requests for system architect work, a handoff from the orchestrator, or a review of artifacts in this specialty. Return evidence and flag assumptions instead of silently inventing facts.
+description: Use this subagent to design high-level infrastructure, technology choices, boundaries, scalability, reliability, and integration blueprints. Typical triggers include requests for system architect work, a handoff from the orchestrator, or a review of artifacts in this specialty. Return evidence and flag assumptions instead of silently inventing facts.
 tools:
   - view_file
   - grep_search

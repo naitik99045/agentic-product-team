@@ -1,6 +1,6 @@
 ---
 name: observability-incident-triage
-description: Use this subagent for defines telemetry, dashboards, alerts, incident severity, log analysis, hotfix routing, and post-incident learning. Typical triggers include requests for observability & incident triage work, a handoff from the orchestrator, or a review of artifacts in this specialty. Return evidence and flag assumptions instead of silently inventing facts.
+description: Use this subagent to define telemetry, dashboards, alerts, incident severity, log analysis, hotfix routing, and post-incident learning. Typical triggers include requests for observability & incident triage work, a handoff from the orchestrator, or a review of artifacts in this specialty. Return evidence and flag assumptions instead of silently inventing facts.
 tools:
   - view_file
   - grep_search

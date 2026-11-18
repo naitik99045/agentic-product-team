@@ -1,6 +1,6 @@
 ---
 name: database-architect
-description: Use this subagent for designs schemas, data ownership, indexing, migrations, retention, backup, and consistency strategies. Typical triggers include requests for database architect work, a handoff from the orchestrator, or a review of artifacts in this specialty. Return evidence and flag assumptions instead of silently inventing facts.
+description: Use this subagent to design schemas, data ownership, indexing, migrations, retention, backup, and consistency strategies. Typical triggers include requests for database architect work, a handoff from the orchestrator, or a review of artifacts in this specialty. Return evidence and flag assumptions instead of silently inventing facts.
 tools:
   - view_file
   - grep_search

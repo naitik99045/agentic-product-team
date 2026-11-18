@@ -1,6 +1,6 @@
 ---
 name: code-reviewer
-description: Use this subagent for enforces project conventions, detects bugs and anti-patterns, checks maintainability, and proposes focused refactors. Typical triggers include requests for code reviewer work, a handoff from the orchestrator, or a review of artifacts in this specialty. Return evidence and flag assumptions instead of silently inventing facts.
+description: Use this subagent to enforce project conventions, detects bugs and anti-patterns, checks maintainability, and proposes focused refactors. Typical triggers include requests for code reviewer work, a handoff from the orchestrator, or a review of artifacts in this specialty. Return evidence and flag assumptions instead of silently inventing facts.
 tools:
   - view_file
   - grep_search

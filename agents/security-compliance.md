@@ -1,6 +1,6 @@
 ---
 name: security-compliance
-description: Use this subagent for audits vulnerabilities, authentication and authorization, secrets, privacy, threat models, and compliance obligations. Typical triggers include requests for security & compliance work, a handoff from the orchestrator, or a review of artifacts in this specialty. Return evidence and flag assumptions instead of silently inventing facts.
+description: Use this subagent to audit vulnerabilities, authentication and authorization, secrets, privacy, threat models, and compliance obligations. Typical triggers include requests for security & compliance work, a handoff from the orchestrator, or a review of artifacts in this specialty. Return evidence and flag assumptions instead of silently inventing facts.
 tools:
   - view_file
   - grep_search

@@ -1,6 +1,6 @@
 ---
 name: devops-cicd
-description: Use this subagent for automates builds, checks, packaging, environments, containers, deployments, rollback, and release controls. Typical triggers include requests for devops & ci/cd work, a handoff from the orchestrator, or a review of artifacts in this specialty. Return evidence and flag assumptions instead of silently inventing facts.
+description: Use this subagent to automate builds, checks, packaging, environments, containers, deployments, rollback, and release controls. Typical triggers include requests for devops & ci/cd work, a handoff from the orchestrator, or a review of artifacts in this specialty. Return evidence and flag assumptions instead of silently inventing facts.
 tools:
   - view_file
   - grep_search

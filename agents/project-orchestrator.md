@@ -1,6 +1,6 @@
 ---
 name: project-orchestrator
-description: Use this subagent for breaks approved work into dependency-aware tasks, assigns ownership, tracks milestones, and coordinates handoffs. Typical triggers include requests for project orchestrator work, a handoff from the orchestrator, or a review of artifacts in this specialty. Return evidence and flag assumptions instead of silently inventing facts.
+description: Use this subagent to break approved work into dependency-aware tasks, assigns ownership, tracks milestones, and coordinates handoffs. Typical triggers include requests for project orchestrator work, a handoff from the orchestrator, or a review of artifacts in this specialty. Return evidence and flag assumptions instead of silently inventing facts.
 tools:
   - view_file
   - grep_search

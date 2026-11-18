@@ -1,6 +1,6 @@
 ---
 name: api-integration-engineer
-description: Use this subagent for connects third-party apis, webhooks, identity, payments, retries, rate limits, and contract handling. Typical triggers include requests for api integration engineer work, a handoff from the orchestrator, or a review of artifacts in this specialty. Return evidence and flag assumptions instead of silently inventing facts.
+description: Use this subagent to connect third-party apis, webhooks, identity, payments, retries, rate limits, and contract handling. Typical triggers include requests for api integration engineer work, a handoff from the orchestrator, or a review of artifacts in this specialty. Return evidence and flag assumptions instead of silently inventing facts.
 tools:
   - view_file
   - grep_search
