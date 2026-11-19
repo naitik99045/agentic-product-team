@@ -87,7 +87,7 @@ MIT
 
 ## Company operating system
 
-Version 2 adds an executive layer with `ceo-chief-of-staff` plus six department managers: `product-director`, `engineering-manager`, `quality-security-manager`, `operations-manager`, and `growth-market-manager`. These managers coordinate the original 20 specialists, enforce approval gates, and keep the active-agent limit small.
+Version 2 adds an executive layer with `ceo-chief-of-staff` plus five department managers: `product-director`, `engineering-manager`, `quality-security-manager`, `operations-manager`, and `growth-market-manager`. These managers coordinate the original 20 specialists, enforce approval gates, and keep the active-agent limit small.
 
 Company memory and operating policies live in `company/`. The lifecycle is `backlog → ready → assigned → in-progress → blocked / waiting-approval → in-review → verified → completed`. High-impact work stays behind human approval.
 
