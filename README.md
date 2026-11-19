@@ -91,6 +91,12 @@ Version 2 adds an executive layer with `ceo-chief-of-staff` plus five department
 
 Company memory and operating policies live in `company/`. The lifecycle is `backlog → ready → assigned → in-progress → blocked / waiting-approval → in-review → verified → completed`. High-impact work stays behind human approval.
 
+## Automatic office startup
+
+The plugin includes a `SessionStart` hook. When the plugin starts an Antigravity session, it checks `http://127.0.0.1:8765/api/state` and launches the office only if it is not already running. It then injects the dashboard URL into the agent session. Starting the hook again is safe and does not create duplicate servers.
+
+To disable automatic startup for a session, set `AGENTIC_TEAM_AUTO_START=0` before launching Antigravity. The launcher writes diagnostic output to `/tmp/agentic-product-team-dashboard.log`.
+
 ## Local animated office dashboard
 
 Start it from the repository root:

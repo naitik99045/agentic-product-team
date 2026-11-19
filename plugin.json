@@ -2,11 +2,11 @@
   "$schema": "https://antigravity.google/schemas/v1/plugin.json",
   "name": "agentic-product-team",
   "displayName": "Agentic Product Team",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "A guided AI company operating system for Antigravity: executive coordination, department managers, 20 specialists, approvals, task state, and a local animated office dashboard.",
   "suggestedPrompts": [
     "Start company mode and create a prioritized operating plan with no more than 5 active agents",
-    "Open the local office dashboard and show me which agents are working, blocked, idle, or waiting for approval",
+    "Start or verify the local office dashboard and show me which agents are working, blocked, idle, or waiting for approval",
     "Use only these named agents to complete a task with evidence, review gates, and escalation rules"
   ],
   "author": {

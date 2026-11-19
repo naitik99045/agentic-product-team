@@ -1,0 +1,12 @@
+{
+  "agentic-team-office": {
+    "enabled": true,
+    "SessionStart": [
+      {
+        "type": "command",
+        "command": "python3 ./scripts/auto-start-office.py",
+        "timeout": 10
+      }
+    ]
+  }
+}
