@@ -13,6 +13,8 @@ Read `references/agent-selection.md` before dispatching agents. It contains the 
 
 When the user asks for company mode, start with `ceo-chief-of-staff`, then route through the smallest relevant department manager: `product-director`, `engineering-manager`, `quality-security-manager`, `operations-manager`, or `growth-market-manager`. Managers coordinate specialists and return evidence upward. Keep the active-agent limit from `company/state.json`; do not activate all workers merely because they exist. Update `company/state.json` through `scripts/company-state.py` or the local dashboard when status changes.
 
+At the end of each assigned work unit, require the responsible agent to submit a report containing summary, changed artifacts, evidence, risks, and next handoff. Use the dashboard's report form or `python3 scripts/company-state.py report ...`; a status change alone is not a completion report.
+
 The local office dashboard is started from the plugin root with `python3 scripts/serve-dashboard.py` and opens at `http://127.0.0.1:8765`. It is a visibility and approval surface, not proof that a task is complete.
 
 ## Non-negotiable routing rules

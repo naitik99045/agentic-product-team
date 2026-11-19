@@ -14,7 +14,7 @@
     </header>
     <main>
       <section class="hero">
-        <div><p class="eyebrow">COMPANY OS / GUIDED MODE</p><h1>Your AI office at a glance.</h1><p class="hero-copy">Watch your departments work, pause staff, clear blockers, and keep high-impact decisions behind your approval.</p></div>
+        <div><p class="eyebrow">COMPANY OS / GUIDED MODE</p><h1>Your AI office at a glance.</h1><p class="hero-copy">Watch your departments work, pause staff, clear blockers, and keep high-impact decisions behind your approval.</p><div class="motion-note"><span>✎ typing</span><span>▤ paperwork</span><span>→ walking</span><span>☕ coffee</span><span>… thinking</span></div></div>
         <div class="goal-card"><span>Quarter focus</span><strong id="quarterGoal">—</strong><div class="goal-rule"><i></i></div></div>
       </section>
       <section class="metric-grid" id="metrics"></section>
@@ -26,10 +26,12 @@
         <section class="panel"><div class="panel-heading"><div><p class="eyebrow">WORK QUEUE</p><h2>Tasks in motion</h2></div><span class="panel-count" id="taskCount">0</span></div><div id="tasks" class="task-list"></div></section>
         <section class="panel"><div class="panel-heading"><div><p class="eyebrow">DECISION DESK</p><h2>Approvals</h2></div><span class="panel-count danger" id="approvalCount">0</span></div><div id="approvals" class="approval-list"></div></section>
       </section>
+      <section class="panel reports-panel"><div class="panel-heading"><div><p class="eyebrow">DELIVERY NOTES</p><h2>Submitted reports</h2></div><span class="panel-count" id="reportCount">0</span></div><div id="reports" class="report-list"></div></section>
       <section class="panel activity-panel"><div class="panel-heading"><div><p class="eyebrow">AUDIT TRAIL</p><h2>Recent activity</h2></div><span class="muted">Local state file</span></div><div id="activity" class="activity-list"></div></section>
       <footer><span>Built for calm, evidence-backed delegation.</span><span>Dashboard controls are local and reversible.</span></footer>
     </main>
   </div>
+  <dialog id="reportModal" class="report-modal"><form method="dialog" id="reportForm"><div class="modal-head"><div><p class="eyebrow">HANDOFF</p><h2>Submit a work report</h2></div><button type="button" class="icon-btn" onclick="document.querySelector('#reportModal').close()">×</button></div><label>Agent name<input id="reportAgent" name="agent" required /></label><label>Report title<input name="title" placeholder="What did you finish?" required /></label><label>Summary<textarea name="summary" rows="3" placeholder="Describe the result and what changed." required></textarea></label><label>Evidence<textarea name="evidence" rows="2" placeholder="Tests, files, screenshots, links, or metrics."></textarea></label><div class="form-row"><label>Risks / open questions<textarea name="risks" rows="2"></textarea></label><label>Next handoff<textarea name="nextHandoff" rows="2"></textarea></label></div><div class="modal-actions"><button type="button" class="mini-btn" onclick="document.querySelector('#reportModal').close()">Cancel</button><button type="submit" class="mini-btn primary">Submit report</button></div></form></dialog>
   <script src="/dashboard/app.js"></script>
 </body>
 </html>
