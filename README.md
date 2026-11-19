@@ -116,3 +116,9 @@ python3 scripts/company-state.py show
 ```
 
 The dashboard is intentionally dependency-free and local-only. It is a visibility and control surface; it does not claim that an agent completed work without evidence.
+
+## Pixel-art office scene
+
+The dashboard now includes an original canvas-rendered pixel office rather than only HTML avatar cards. Cute animal coworkers are drawn as pixel sprites and receive desks, rooms, coffee machines, plants, status bubbles, and small activity loops. They can walk toward the coffee machine, sit at a desk, type, handle paperwork, think, or raise a blocked indicator.
+
+This visual mode is inspired by open-source projects such as [Pixel Agents](https://github.com/pixel-agents-hq/pixel-agents) and [Claude Office](https://github.com/W17ant/Claude-Office), but this repository does not copy their artwork. The scene is implemented locally in `dashboard/pixel-office.js` with original simple sprite shapes.

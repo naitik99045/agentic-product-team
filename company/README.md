@@ -46,3 +46,7 @@ python3 scripts/company-state.py report backend-developer "Customer API complete
   --risks "Pagination still needs a load test." \
   --next-handoff "qa-test-automation runs API regression coverage"
 ```
+
+## Pixel-art office
+
+The dashboard's main floor is an original canvas-rendered pixel office. It uses small animal coworkers, desks, rooms, plants, coffee machines, status bubbles, and activity loops. The visual layer is intentionally decorative; the JSON state, task evidence, approvals, and reports remain authoritative.
