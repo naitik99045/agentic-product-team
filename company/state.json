@@ -1,0 +1,85 @@
+{
+  "company": {
+    "name": "Agentic Product Team",
+    "mode": "guided",
+    "activeAgentLimit": 5,
+    "updatedAt": "2026-11-19T00:00:00Z",
+    "quarterGoal": "Deliver reliable, evidence-backed product work with human approval at high-impact gates"
+  },
+  "agents": [],
+  "tasks": [
+    {
+      "id": "TASK-001",
+      "title": "Initialize company operating plan",
+      "department": "Executive",
+      "owner": "ceo-chief-of-staff",
+      "status": "ready",
+      "priority": "high",
+      "progress": 20,
+      "detail": "Set company goals, policies, active-agent limit, and first project priorities.",
+      "evidence": []
+    },
+    {
+      "id": "TASK-002",
+      "title": "Create first product discovery brief",
+      "department": "Product",
+      "owner": "product-manager",
+      "status": "in-progress",
+      "priority": "high",
+      "progress": 55,
+      "detail": "Turn the next product idea into a scoped brief with acceptance criteria.",
+      "evidence": [
+        "company/policies/definition-of-done.md"
+      ]
+    },
+    {
+      "id": "TASK-003",
+      "title": "Prepare engineering delivery plan",
+      "department": "Engineering",
+      "owner": "engineering-manager",
+      "status": "waiting-approval",
+      "priority": "medium",
+      "progress": 35,
+      "detail": "Sequence architecture and implementation work after the product brief is approved.",
+      "evidence": []
+    }
+  ],
+  "approvals": [
+    {
+      "id": "APR-001",
+      "title": "Approve first product scope",
+      "requester": "product-manager",
+      "risk": "medium",
+      "status": "pending",
+      "createdAt": "2026-11-19T00:00:00Z"
+    },
+    {
+      "id": "APR-002",
+      "title": "Authorize production deployment",
+      "requester": "devops-cicd",
+      "risk": "high",
+      "status": "pending",
+      "createdAt": "2026-11-19T00:00:00Z"
+    }
+  ],
+  "activity": [
+    {
+      "time": "09:10",
+      "agent": "ceo-chief-of-staff",
+      "action": "Created company operating plan",
+      "tone": "blue"
+    },
+    {
+      "time": "09:24",
+      "agent": "product-manager",
+      "action": "Drafted discovery brief",
+      "tone": "green"
+    },
+    {
+      "time": "09:41",
+      "agent": "engineering-manager",
+      "action": "Waiting for scope approval",
+      "tone": "amber"
+    }
+  ]
+}

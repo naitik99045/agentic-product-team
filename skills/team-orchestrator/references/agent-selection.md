@@ -2,6 +2,21 @@
 
 Use the exact agent names below when asking Antigravity to dispatch a team. All names belong to the `agentic-product-team` plugin.
 
+## Company management layer
+
+Use these management agents when the task spans departments or you want company-mode coordination:
+
+| Agent name | Use for |
+|---|---|
+| `ceo-chief-of-staff` | Company goals, priorities, escalations, approvals, executive reports |
+| `product-director` | Product department coordination and scope decisions |
+| `engineering-manager` | Engineering sequencing, subsystem ownership, technical delivery |
+| `quality-security-manager` | Verification, security, review, performance, and release gates |
+| `operations-manager` | CI/CD, deployment, observability, runbooks, and incident readiness |
+| `growth-market-manager` | Market research, positioning, onboarding, launch messaging, and experiments |
+
+For company mode, start with `ceo-chief-of-staff` and add only the managers relevant to the current goal. The normal default is no more than 5 active agents.
+
 ## Exact roster
 
 | Agent name | Use for |

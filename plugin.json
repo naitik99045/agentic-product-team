@@ -2,12 +2,12 @@
   "$schema": "https://antigravity.google/schemas/v1/plugin.json",
   "name": "agentic-product-team",
   "displayName": "Agentic Product Team",
-  "version": "1.0.0",
-  "description": "Dispatches a coordinated 20-role product engineering team for planning, building, reviewing, launching, and operating software projects.",
+  "version": "2.0.0",
+  "description": "A guided AI company operating system for Antigravity: executive coordination, department managers, 20 specialists, approvals, task state, and a local animated office dashboard.",
   "suggestedPrompts": [
-    "Run the full 20-agent product delivery workflow for this repository",
-    "Plan this feature with the smallest safe agent wave and clear handoffs",
-    "Audit the current project for launch readiness across product, quality, security, and operations"
+    "Start company mode and create a prioritized operating plan with no more than 5 active agents",
+    "Open the local office dashboard and show me which agents are working, blocked, idle, or waiting for approval",
+    "Use only these named agents to complete a task with evidence, review gates, and escalation rules"
   ],
   "author": {
     "name": "naitik99045",

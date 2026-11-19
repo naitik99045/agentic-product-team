@@ -83,3 +83,30 @@ You can also place the plugin under `.agents/plugins/` for workspace scope or `~
 ## License
 
 MIT
+
+
+## Company operating system
+
+Version 2 adds an executive layer with `ceo-chief-of-staff` plus six department managers: `product-director`, `engineering-manager`, `quality-security-manager`, `operations-manager`, and `growth-market-manager`. These managers coordinate the original 20 specialists, enforce approval gates, and keep the active-agent limit small.
+
+Company memory and operating policies live in `company/`. The lifecycle is `backlog → ready → assigned → in-progress → blocked / waiting-approval → in-review → verified → completed`. High-impact work stays behind human approval.
+
+## Local animated office dashboard
+
+Start it from the repository root:
+
+```bash
+python3 scripts/serve-dashboard.py
+```
+
+Open [http://127.0.0.1:8765](http://127.0.0.1:8765). The dashboard shows animated staff in department rooms, working/idle/blocked/offline status, task progress, approvals, and recent activity. Click a staff card to cycle its local status. Changes are stored in `company/state.json`.
+
+Agents or scripts can update status without opening the UI:
+
+```bash
+python3 scripts/company-state.py agent backend-developer working --task "Implement the API"
+python3 scripts/company-state.py task TASK-002 in-review --progress 90
+python3 scripts/company-state.py show
+```
+
+The dashboard is intentionally dependency-free and local-only. It is a visibility and control surface; it does not claim that an agent completed work without evidence.

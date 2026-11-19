@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Agentic Product Team — Office Control Room</title>
+  <link rel="stylesheet" href="/dashboard/styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand"><div class="brand-mark">✦</div><div><strong>Agentic Product Team</strong><span>Office Control Room</span></div></div>
+      <div class="top-actions"><span id="syncState" class="sync-pill">Connecting…</span><button id="refreshBtn" class="icon-btn" title="Refresh state">↻</button></div>
+    </header>
+    <main>
+      <section class="hero">
+        <div><p class="eyebrow">COMPANY OS / GUIDED MODE</p><h1>Your AI office at a glance.</h1><p class="hero-copy">Watch your departments work, pause staff, clear blockers, and keep high-impact decisions behind your approval.</p></div>
+        <div class="goal-card"><span>Quarter focus</span><strong id="quarterGoal">—</strong><div class="goal-rule"><i></i></div></div>
+      </section>
+      <section class="metric-grid" id="metrics"></section>
+      <section class="office-section">
+        <div class="section-heading"><div><p class="eyebrow">LIVE FLOORPLAN</p><h2>Office floor</h2></div><div class="filters" id="departmentFilters"></div></div>
+        <div class="office-floor" id="officeFloor"></div>
+      </section>
+      <section class="lower-grid">
+        <section class="panel"><div class="panel-heading"><div><p class="eyebrow">WORK QUEUE</p><h2>Tasks in motion</h2></div><span class="panel-count" id="taskCount">0</span></div><div id="tasks" class="task-list"></div></section>
+        <section class="panel"><div class="panel-heading"><div><p class="eyebrow">DECISION DESK</p><h2>Approvals</h2></div><span class="panel-count danger" id="approvalCount">0</span></div><div id="approvals" class="approval-list"></div></section>
+      </section>
+      <section class="panel activity-panel"><div class="panel-heading"><div><p class="eyebrow">AUDIT TRAIL</p><h2>Recent activity</h2></div><span class="muted">Local state file</span></div><div id="activity" class="activity-list"></div></section>
+      <footer><span>Built for calm, evidence-backed delegation.</span><span>Dashboard controls are local and reversible.</span></footer>
+    </main>
+  </div>
+  <script src="/dashboard/app.js"></script>
+</body>
+</html>
