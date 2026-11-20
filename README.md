@@ -30,6 +30,8 @@ Every agent now has a role-specific mission, preflight checklist, workflow, guar
 
 These instructions improve reliability, but they do not retrain Antigravity's underlying model or guarantee error-free software. The agent still needs clear requirements, repository access, suitable tools, and human approval for important product, security, and production decisions.
 
+Version 2.4 adds a polyglot frontend engineering workflow covering HTML, React, Next.js, Three.js/React Three Fiber, C++, C#, Godot, Kotlin/Gradle, Rust, Ruby, Go, and Python. It also adds a reference-driven UI art-direction gate based on ThreeUI, Taste Skill, GSAP, and 21st.dev, with anti-slop rules and Chromium checks at desktop, tablet, and mobile widths. The mobile agent now covers lean Android, iOS, cross-platform, and PC fundamentals without turning every task into a dependency-heavy rewrite.
+
 ## Exact agent names and responsibilities
 
 All agents below belong to the `agentic-product-team` plugin:
@@ -41,10 +43,10 @@ All agents below belong to the `agentic-product-team` plugin:
 - `system-architect` — system boundaries, technology choices, integrations, scalability, reliability.
 - `ui-ux-designer` — user flows, wireframes, interaction design, accessibility, design systems.
 - `database-architect` — schemas, indexes, migrations, consistency, retention, backup.
-- `frontend-developer` — web interfaces, client state, responsive layouts, accessibility.
+- `frontend-developer` — polyglot client interfaces, React/Next.js, 3D web, responsive behavior, accessibility, and production verification.
 - `backend-developer` — APIs, domain logic, validation, persistence, server tests.
 - `api-integration-engineer` — third-party APIs, payments, webhooks, retries, rate limits.
-- `mobile-developer` — mobile features, platform behavior, offline states, device optimization.
+- `mobile-developer` — lean Android/iOS/cross-platform features, Kotlin/Gradle, lifecycle, offline states, device optimization, and PC client fundamentals.
 - `ai-ml-engineer` — LLM pipelines, embeddings, inference, evaluation, AI safety, cost.
 - `code-reviewer` — correctness, maintainability, regressions, anti-patterns, refactoring.
 - `qa-test-automation` — unit, integration, contract, end-to-end, and regression tests.

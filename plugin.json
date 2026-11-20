@@ -2,7 +2,7 @@
   "$schema": "https://antigravity.google/schemas/v1/plugin.json",
   "name": "agentic-product-team",
   "displayName": "Agentic Product Team",
-  "version": "2.3.0",
+  "version": "2.4.0",
   "description": "A guided AI company operating system for Antigravity with executive coordination, 20 specialists, approvals, reports, and an animated pixel-art office dashboard.",
   "suggestedPrompts": [
     "Start company mode and create a prioritized operating plan with no more than 5 active agents",

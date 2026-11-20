@@ -3,12 +3,13 @@
 from http.server import ThreadingHTTPServer, SimpleHTTPRequestHandler
 from pathlib import Path
 import json, os
+from urllib.parse import urlparse
 ROOT=Path(__file__).resolve().parents[1]
 STATE=ROOT/"company"/"state.json"
 class Handler(SimpleHTTPRequestHandler):
     def __init__(self,*args,**kwargs): super().__init__(*args,directory=str(ROOT),**kwargs)
     def do_GET(self):
-        if self.path == "/api/state":
+        if urlparse(self.path).path == "/api/state":
             raw=STATE.read_bytes(); self.send_response(200); self.send_header("Content-Type","application/json"); self.send_header("Cache-Control","no-store"); self.end_headers(); self.wfile.write(raw); return
         if self.path == "/": self.path = "/dashboard/index.html"
         return super().do_GET()
